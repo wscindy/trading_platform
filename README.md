@@ -1,7 +1,5 @@
 # MemeStrategy Digital Asset Platform — MVP
 
-模擬 MemeStrategy 數位資產平台的 MVP，用來展示 QA 測試策略和能力。
-
 ## Tech Stack
 
 - **Backend:** Python / Flask + SQLAlchemy (SQLite)
