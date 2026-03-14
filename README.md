@@ -46,6 +46,33 @@ npm install
 npm run dev  # Runs on http://localhost:5173
 ```
 
+### Load Testing (Locust 壓力測試)
+為了驗證伺服器在高併發下的效能與穩定度，本專案使用 Locust 進行負載測試。
+
+執行步驟：
+
+確保已安裝 Locust 模組：
+
+```bash
+pip install locust
+```
+
+在專案根目錄（memestrategy-platform/）下執行：
+```bash
+locust -f locustfile.py
+開啟瀏覽器並前往 http://localhost:8089。
+```
+在 Web 介面中設定：
+
+```bash
+Number of users: (模擬的併發使用者數，例如 100)
+
+Spawn rate: (每秒增加的使用者數，例如 10)
+
+Host: http://localhost:5001 (Backend 網址)
+
+點擊 Start swarming 即可開始收集即時的 RPS (Requests Per Second) 與 Response Time 等效能數據。
+```
 ## API Endpoints
 
 ### Auth
@@ -96,5 +123,6 @@ memestrategy-platform/
 │   │       ├── FundView.vue
 │   │       └── OrdersView.vue
 │   └── package.json
+├── locustfile.py           # Load testing script
 └── README.md
 ```
